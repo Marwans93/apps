@@ -25,7 +25,7 @@
 
     <div class='form-group'>
         @foreach ($roles as $role)
-            {{ Form::checkbox('roles[]',  $role->id, $user->roles ) }}
+              {!! Form::radio('role', $role->id, $user->hasRole($role)) !!}
             {{ Form::label($role->name, ucfirst($role->name)) }}<br>
 
         @endforeach

@@ -25,11 +25,27 @@
     
     <div class='form-group'>
         @foreach ($roles as $role)
-            {{ Form::checkbox('roles[]',  $role->id ) }}
+            {{ Form::radio('roles[]',  $role->id ) }}
             {{ Form::label($role->name, ucfirst($role->name)) }}<br>
 
         @endforeach
     </div>
+    <!--  <select class="form-control">
+           <option value="">Select role</option>
+          @foreach($roles as $role)
+           <option value="{{$role->id}}">{{$role->name}}</option>
+          @endForeach     
+     </select> -->
+
+   <!--  <div class="form-group">
+    <label for="roles">Give Role</label>
+    <select class="form-control" id="id">
+        <option value="">Select role</option>
+      @foreach($roles as $role)
+           <option value="{{$role->id}}">{{$role->name}}</option>
+      @endForeach  
+    </select>
+    </div> -->
 
     <div class="form-group">
         {{ Form::label('password', 'Password') }}<br>
